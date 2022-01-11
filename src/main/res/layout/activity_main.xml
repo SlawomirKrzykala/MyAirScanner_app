@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4461F3"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/appNameLab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="MyAirScan"
+                android:textSize="46sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pramLab"
+                    android:layout_width="120sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="Parametr"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nowLab"
+                    android:layout_width="100sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="Teraz"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/AvgLab"
+                    android:layout_width="100sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:text="Średnia"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/layout_data_bg_round_top"
+                android:freezesText="false"
+                android:padding="6dp"
+                android:text="Ogólne"
+                android:textAlignment="center"
+                android:textSize="26sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/layout_data_bg_round_bot"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tempLab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="Temperatura:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/humLab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="Wilgotność:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/quaLab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center|fill_horizontal"
+                        android:text="Jakość powietrza:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/genVal"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tempVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/humVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/quaVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center|fill_horizontal"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/genAvgVal"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tempAvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/humAvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/quaAvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center|fill_horizontal"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/layout_data_bg_round_top"
+                android:padding="6dp"
+                android:text="PM"
+                android:textAlignment="center"
+                android:textSize="26sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/layout_data_bg_round_bot"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <LinearLayout
+                    android:layout_width="26dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelPMae"
+                        android:layout_width="match_parent"
+                        android:layout_height="80sp"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:rotation="-90"
+                        android:text="AE"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/labelPMsm"
+                        android:layout_width="match_parent"
+                        android:layout_height="80sp"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:rotation="-90"
+                        android:text="SM"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/pmae10pLab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="PM 1.0:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/pmae25Lab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="PM 2.5:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/pmae100Lab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="PM 10.0:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/pmsm10pLab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="PM 1.0:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/pmasm5Lab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="PM 2.5:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/pmsm100Lab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="PM 10.0:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pmVal"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/pmae10Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/pmae25Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/pmae100Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/pmsm10Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/pmsm25Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/pmsm100Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pmAvgVal"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/pmae10AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/pmae25AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/pmae100AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/pmsm10AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/pmsm25AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/pmsm100AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/layout_data_bg_round_top"
+                android:padding="6dp"
+                android:text="Numeryczne w 0.1L"
+                android:textAlignment="center"
+                android:textSize="26sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/layout_data_bg_round_bot"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/um3Lab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="0.3um:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um5Lab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="0.5um:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um10Lab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="1.0um:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um25Lab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="2.5um:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um50Lab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="5.0um:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um100Lab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="10.0um:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/umVal"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/um3Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um5Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um10Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um25Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um50Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um100Val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/umAvgVal"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/um3AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um5AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um10AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um25AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um50AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/um100AvgVal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="fill_horizontal"
+                        android:lineSpacingExtra="24sp"
+                        android:text="--"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <ProgressBar
+                android:id="@+id/renewProgressBar"
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:max="10000"
+                android:progressTint="#1000A1"
+                android:soundEffectsEnabled="true" />
+
+            <TextView
+                android:id="@+id/renewLab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="------"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/btnScan"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_gravity="center_horizontal"
+                android:onClick="btnScanPressed"
+                android:text="Odśwież Dane"
+                android:textAlignment="center"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
